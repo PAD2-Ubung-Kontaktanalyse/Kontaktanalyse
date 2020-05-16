@@ -17,15 +17,15 @@ int main() {
 int n;
 
     printf("Menu:\n");
-    printf("0 - End Program\n");
-    printf("1 - Verbindung zwischen zwei Personen analysieren.\n");
-    printf("2 - Direkte Kontakte zu einer Person anzeigen\n");
-    printf("3 - Durchschnittskontaktzeit einer Person\n");
-    printf("4 - Statistik anzeigen\n");
-    printf("5 - Liste der Personen ausgeben\n");
-    printf("6 - Liste der Kontakte ausgeben\n");
-    printf("7 - Person erstellen/bearbeiten/entfernen\n");
-    printf("8 - Kontakt erstellen/bearbeiten/entfernen\n");
+    printf("[0] - End Program\n");
+    printf("[1] - Verbindung zwischen zwei Personen analysieren.\n");
+    printf("[2]- Direkte Kontakte zu einer Person anzeigen\n");
+    printf("[3] - Durchschnittskontaktzeit einer Person\n");
+    printf("[4]- Statistik anzeigen\n");
+    printf("[5] - Liste der Personen ausgeben\n");
+    printf("[6] - Liste der Kontakte ausgeben\n");
+    printf("[7] - Person erstellen/bearbeiten/entfernen\n");
+    printf("[8] - Kontakt erstellen/bearbeiten/entfernen\n");
     
     do {
 

@@ -1,11 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 int main()
 {
     int n = 0;
-    
-    printf("Bitte waehlen Sie eine der folgenden Aktionen aus:\n");
+
+    printf("Bitte waehlen Sie eine der folgenden Aktionen aus:\n\n");
     printf("             Menu:\n\n");
     printf("    || [1] - Verbindung zwischen zwei Personen analysieren          ||\n");
     printf("    || [2]-  Direkte Kontakte zu einer Person anzeigen              ||\n");
@@ -19,7 +20,9 @@ int main()
 
     scanf("%d", &n);
 
-    switch(n) {
+    switch(n)
+{
+
 	case 1: printf("Verbindung zwischen zwei Personen analysieren\n");
 	break;
 	case 2: printf("Direkte Kontakte zu einer Person anzeigen\n");
@@ -39,11 +42,15 @@ int main()
 	case 0: printf("Programm beenden");
 	break;
 	default: printf("Falsche Eingabe!\n");
+
 }
 
 
     return 0;
 }
+
+
+
 
 
 

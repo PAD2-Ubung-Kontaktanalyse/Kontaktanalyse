@@ -35,11 +35,17 @@ int main()
 	break;
     case 6: printf("Liste der Kontakte ausgeben\n");
 	break;
-	case 7: printf("Person erstellen/bearbeiten/entfernen");
+	case 7: printf("Bitte waehlen Sie eine der folgenden Aktionen aus:\n\n");
+            printf("[1] - Person erstellen\n");
+            printf("[2] - Person bearbeiten\n");
+            printf("[3] - Person entfernen\n");
+    break;
+	case 8: printf("Bitte waehlen Sie eine der folgenden Aktionen aus:\n\n");
+            printf("Kontakt erstellen/bearbeiten/entfernen\n");
+            printf("Kontakt bearbeiten\n");
+            printf("Kontakt entfernen\n");
 	break;
-	case 8: printf("Kontakt erstellen/bearbeiten/entfernen");
-	break;
-	case 0: printf("Programm beenden");
+	case 0: printf("Programm beenden\n");
 	break;
 	default: printf("Falsche Eingabe!\n");
 

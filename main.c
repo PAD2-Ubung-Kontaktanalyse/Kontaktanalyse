@@ -6,7 +6,6 @@ int main()
     int n = 0;
     
     printf("Bitte waehlen Sie eine der folgenden Aktionen aus:\n");
-    scanf("%d", &n);
     printf("             Menu:\n\n");
     printf("    || [1] - Verbindung zwischen zwei Personen analysieren          ||\n");
     printf("    || [2]-  Direkte Kontakte zu einer Person anzeigen              ||\n");

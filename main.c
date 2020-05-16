@@ -14,47 +14,67 @@ int main() {
 }
 
 
+int n;
 
-case1: Verbindung zwischen zwei personen
+    printf("Menu:\n");
+    printf("0 - End Program\n");
+    printf("1 - Verbindung zwischen zwei Personen analysieren.\n");
+    printf("2 - Direkte Kontakte zu einer Person anzeigen\n");
+    printf("3 - Durchschnittskontaktzeit einer Person\n");
+    printf("4 - Statistik anzeigen\n");
+    printf("5 - Liste der Personen ausgeben\n");
+    printf("6 - Liste der Kontakte ausgeben\n");
+    printf("7 - Person erstellen/bearbeiten/entfernen\n");
+    printf("8 - Kontakt erstellen/bearbeiten/entfernen\n");
+    
+    do {
 
-Funtkion_zweiPersonen(){
-char name1;
-char name2;
+    printf("Bitte geben Sie ihre Auswahl an: ");
+    scanf("%d",&n);
 
-fgets(name1);
-fgets(name2);
 
-erstelle Liste mit kontakten
-print Liste
+switch (n) {
+  
+      case 1: Verbindung zwischen zwei personen
 
+      Funtkion_zweiPersonen(){
+      char name1;
+      char name2;
+
+      fgets(name1);
+      fgets(name2);
+
+      erstelle Liste mit kontakten
+      print Liste
+
+      }
+
+      case 2: Alle direkten Kontakte einer Person
+      case 3: Durchschnittskontaktzeit einer Person
+      case 4: Statistik anzeigen
+      case 5: Liste der Personen ausgeben
+
+       print liste 
+
+      case 6: Liste der Kontakte ausgeben
+
+
+
+      case 7: Person erstellen/bearbeiten/entfernen
+
+            case1: erstellen
+            case2: bearbeiten
+            case3: entfernen 
+
+      case 8: Kontakt erstellen/bearbeiten/entfernen
+
+          case1: erstellen
+          case2: bearbeiten
+          case3: entfernen
+
+      case 9: beenden
+
+        allen speicher freigeben
+        freundlich ciao sagen
+        beenden 
 }
-
-case2: Alle direkten Kontakte einer Person
-case3: Durchschnittskontaktzeit einer Person
-case4: Statistik anzeigen
-case5: Liste der Personen ausgeben
-
- print liste 
-
-case6: Liste der Kontakte ausgeben
-
-  
-
-case7: Person erstellen/bearbeiten/entfernen
-
-      case1: erstellen
-      case2: bearbeiten
-      case3: entfernen 
-    
-case8: Kontakt erstellen/bearbeiten/entfernen
-
-    case1: erstellen
-    case2: bearbeiten
-    case3: entfernen
-    
-case9: beenden
-
-  allen speicher freigeben
-  freundlich ciao sagen
-  beenden 
-  

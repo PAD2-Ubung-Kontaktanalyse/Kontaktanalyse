@@ -2,9 +2,13 @@
 #include <stdlib.h>
 #include <time.h>
 
+
 int main()
 {
     int n = 0;
+    int n2 = 0;
+    int n3 = 0;
+
 
     printf("Bitte waehlen Sie eine der folgenden Aktionen aus:\n\n");
     printf("             Menu:\n\n");
@@ -18,46 +22,52 @@ int main()
     printf("    || [8] - Kontakt erstellen/bearbeiten/entfernen                 ||\n");
     printf("    || [0] - Programm beenden                                       ||\n");
 
-    scanf("%d", &n);
+        scanf("%d", &n);
 
-    switch(n)
+
+if(n >= 1 && n <= 8 || n ==  0)
+    {
+        switch(n)
+            {
+
+            case 1: printf("Verbindung zwischen zwei Personen analysieren\n");
+            break;
+            case 2: printf("Direkte Kontakte zu einer Person anzeigen\n");
+            break;
+            case 3: printf("Durchschnittskontaktzeit einer Person\n");
+            break;
+            case 4: printf("Statistik anzeigen\n");
+            break;
+            case 5: printf("Liste der Personen ausgeben\n");
+            break;
+            case 6: printf("Liste der Kontakte ausgeben\n");
+            break;
+            case 7: printf("Bitte waehlen Sie eine der folgenden Aktionen aus:\n\n");
+                    printf("[1] - Person erstellen\n");
+                    printf("[2] - Person bearbeiten\n");
+                    printf("[3] - Person entfernen\n");
+                    scanf("%d", &n2);
+            break;
+            case 8: printf("Bitte waehlen Sie eine der folgenden Aktionen aus:\n\n");
+                    printf("[1] - Kontakt erstellen\n");
+                    printf("[2] - Kontakt bearbeiten\n");
+                    printf("[3] - Kontakt entfernen\n");
+                    scanf("%d", &n3);
+            break;
+            case 0: printf("Programm beenden\n");
+            break;
+            default: printf("Falsche Eingabe!\n");
+
+            }
+    }
+else
 {
-
-	case 1: printf("Verbindung zwischen zwei Personen analysieren\n");
-	break;
-	case 2: printf("Direkte Kontakte zu einer Person anzeigen\n");
-	break;
-    case 3: printf("Durchschnittskontaktzeit einer Person\n");
-	break;
-	case 4: printf("Statistik anzeigen\n");
-	break;
-	case 5: printf("Liste der Personen ausgeben\n");
-	break;
-    case 6: printf("Liste der Kontakte ausgeben\n");
-	break;
-	case 7: printf("Bitte waehlen Sie eine der folgenden Aktionen aus:\n\n");
-            printf("[1] - Person erstellen\n");
-            printf("[2] - Person bearbeiten\n");
-            printf("[3] - Person entfernen\n");
-    break;
-	case 8: printf("Bitte waehlen Sie eine der folgenden Aktionen aus:\n\n");
-            printf("Kontakt erstellen/bearbeiten/entfernen\n");
-            printf("Kontakt bearbeiten\n");
-            printf("Kontakt entfernen\n");
-	break;
-	case 0: printf("Programm beenden\n");
-	break;
-	default: printf("Falsche Eingabe!\n");
-
+    printf("Falsche Eingabe!\n\n");
 }
 
 
-    return 0;
-}
-
-
-
-
+        return 0;
+    }
 
 
 

@@ -12,3 +12,49 @@ int main() {
   [0] - Beenden
   return 0;
 }
+
+
+
+case1: Verbindung zwischen zwei personen
+
+Funtkion_zweiPersonen(){
+char name1;
+char name2;
+
+fgets(name1);
+fgets(name2);
+
+erstelle Liste mit kontakten
+print Liste
+
+}
+
+case2: Alle direkten Kontakte einer Person
+case3: Durchschnittskontaktzeit einer Person
+case4: Statistik anzeigen
+case5: Liste der Personen ausgeben
+
+ print liste 
+
+case6: Liste der Kontakte ausgeben
+
+  
+
+case7: Person erstellen/bearbeiten/entfernen
+
+      case1: erstellen
+      case2: bearbeiten
+      case3: entfernen 
+    
+case8: Kontakt erstellen/bearbeiten/entfernen
+
+    case1: erstellen
+    case2: bearbeiten
+    case3: entfernen
+    
+case9: beenden
+
+  allen speicher freigeben
+  freundlich ciao sagen
+  beenden 
+  

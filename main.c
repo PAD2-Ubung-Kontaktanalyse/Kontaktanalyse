@@ -20,12 +20,12 @@ int main()
     printf("    || [6] - Liste der Kontakte ausgeben                            ||\n");
     printf("    || [7] - Person erstellen/bearbeiten/entfernen                  ||\n");
     printf("    || [8] - Kontakt erstellen/bearbeiten/entfernen                 ||\n");
-    printf("    || [0] - Programm beenden                                       ||\n");
+    printf("    || [9] - Programm beenden                                       ||\n");
 
         scanf("%d", &n);
 
 
-if(n >= 1 && n <= 8 || n ==  0)
+if(isdigit(n) >= 0)
     {
         switch(n)
             {
@@ -54,7 +54,7 @@ if(n >= 1 && n <= 8 || n ==  0)
                     printf("[3] - Kontakt entfernen\n");
                     scanf("%d", &n3);
             break;
-            case 0: printf("Programm beenden\n");
+            case 9: printf("Programm beenden\n");
             break;
             default: printf("Falsche Eingabe!\n");
 
@@ -68,7 +68,6 @@ else
 
         return 0;
     }
-
 
 
 

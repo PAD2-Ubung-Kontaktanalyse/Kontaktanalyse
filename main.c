@@ -70,7 +70,7 @@ else
     }
 
 
-
+000000000000000000000000000000000000000000000000
 int main() {
   //[1] - Verbindung zwischen 2 Personen analysieren 
   [2] - Alle direkten Kontakte einer Person anzeigen 

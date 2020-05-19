@@ -2,9 +2,9 @@
 
 Analyse von zufällig generierten Personendaten und Interaktionen 
 
---- 
 
-<h2>Usecase</h2>
+
+<h2>Usecases</h2>
 
 <h3>Personen generieren:</h3>
 

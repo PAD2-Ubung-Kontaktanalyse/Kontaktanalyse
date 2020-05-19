@@ -1,12 +1,12 @@
-#Kontaktanalyse 
+<h1>Kontaktanalyse</h1>
 
 Analyse von zufällig generierten Personendaten und Interaktionen 
 
 --- 
 
-##Usecase 
+<h2>Usecase</h2>
 
-###Personen generieren: 
+<h3>Personen generieren:</h3>
 
 Generiert Personen mithilfe einer Vornamensliste und speichert das Ergebnis in einer Textdatei ab 
 
@@ -24,7 +24,7 @@ Generiert Personen mithilfe einer Vornamensliste und speichert das Ergebnis in e
 
     
 
-###Kontakte generieren: 
+<h3>Kontakte generieren:</h3>
 
 Generiert Kontakte mithilfe einer Liste von Personen und speichert das Ergebnis in einer Textdatei ab 
 
@@ -42,6 +42,6 @@ Generiert Kontakte mithilfe einer Liste von Personen und speichert das Ergebnis 
 
 --- 
 
-##Lizenz 
+<h2>Lizenz</h2>
 
 BSD 

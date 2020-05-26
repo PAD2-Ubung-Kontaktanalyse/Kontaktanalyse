@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
+   
 
 int main()
 {
@@ -10,16 +11,16 @@ int main()
     int n3 = 0;
 
 
-    printf("Bitte waehlen Sie eine der folgenden Aktionen aus:\n\n");
+    printf("             Bitte waehlen Sie eine der folgenden Aktionen aus:\n\n");
     printf("             Menu:\n\n");
-    printf("    || [1] - Verbindung zwischen zwei Personen analysieren          ||\n");
-    printf("    || [2]-  Direkte Kontakte zu einer Person anzeigen              ||\n");
-    printf("    || [3] - Durchschnittskontaktzeit einer Person                  ||\n");
-    printf("    || [4]-  Statistik anzeigen                                     ||\n");
-    printf("    || [5] - Liste der Personen ausgeben                            ||\n");
-    printf("    || [6] - Liste der Kontakte ausgeben                            ||\n");
-    printf("    || [7] - Person erstellen/bearbeiten/entfernen                  ||\n");
-    printf("    || [8] - Kontakt erstellen/bearbeiten/entfernen                 ||\n");
+    printf("    || [1] - Person erstellen/bearbeiten/entfernen                  ||\n");
+    printf("    || [2]-  Kontakt erstellen/bearbeiten/entfernen                 ||\n");
+    printf("    || [3] - Verbindung zwischen zwei Personen analysieren          ||\n");
+    printf("    || [4]-  Liste der Personen ausgeben                            ||\n");
+    printf("    || [5] - Liste der Kontakte ausgeben                            ||\n");
+    printf("    || [6] - Direkte Kontakte zu einer Person anzeigen              ||\n");
+    printf("    || [7] - Durchschnittskontaktzeit einer Person anzeigen         ||\n");
+    printf("    || [8] - Statistik anzeigen                                     ||\n");
     printf("    || [9] - Programm beenden                                       ||\n");
 
         scanf("%d", &n);
@@ -30,34 +31,42 @@ if(isdigit(n) >= 0)
         switch(n)
             {
 
-            case 1: printf("Verbindung zwischen zwei Personen analysieren\n");
-            break;
-            case 2: printf("Direkte Kontakte zu einer Person anzeigen\n");
-            break;
-            case 3: printf("Durchschnittskontaktzeit einer Person\n");
-            break;
-            case 4: printf("Statistik anzeigen\n");
-            break;
-            case 5: printf("Liste der Personen ausgeben\n");
-            break;
-            case 6: printf("Liste der Kontakte ausgeben\n");
-            break;
-            case 7: printf("Bitte waehlen Sie eine der folgenden Aktionen aus:\n\n");
+            case 1: printf("Bitte waehlen Sie eine der folgenden Aktionen aus:\n\n");
                     printf("[1] - Person erstellen\n");
                     printf("[2] - Person bearbeiten\n");
                     printf("[3] - Person entfernen\n");
                     scanf("%d", &n2);
-            break;
-            case 8: printf("Bitte waehlen Sie eine der folgenden Aktionen aus:\n\n");
+                    break;
+                
+            case 2: printf("Bitte waehlen Sie eine der folgenden Aktionen aus:\n\n");
                     printf("[1] - Kontakt erstellen\n");
                     printf("[2] - Kontakt bearbeiten\n");
                     printf("[3] - Kontakt entfernen\n");
                     scanf("%d", &n3);
-            break;
+                    break;
+                
+            case 3: printf("Verbindung zwischen zwei Personen analysieren\n");
+                    break;
+                
+            case 4: printf("Liste der Personen ausgeben\n");
+                    break;
+                
+            case 5: printf("Liste der Kontakte ausgeben\n");
+                    break;
+                
+            case 6: printf("Direkte Kontakte zu einer Person anzeigen\n");
+                    break;
+                
+            case 7: printf("Durchschnittskontaktzeit einer Person anzeigen\n");
+                    break;
+                
+            case 8: printf("Statistik anzeigen\n");
+                    break;
+                
             case 9: printf("Programm beenden\n");
-            break;
+                    break;
+                
             default: printf("Falsche Eingabe!\n");
-
             }
     }
 else
@@ -70,7 +79,7 @@ else
     }
 
 
-000000000000000000000000000000000000000000000000
+/*
 int main() {
   //[1] - Verbindung zwischen 2 Personen analysieren 
   [2] - Alle direkten Kontakte einer Person anzeigen 
@@ -147,4 +156,4 @@ switch (n) {
         allen speicher freigeben
         freundlich ciao sagen
         beenden 
-}
+}*/

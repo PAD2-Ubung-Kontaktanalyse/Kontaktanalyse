@@ -38,4 +38,12 @@ int generate_persons(char * input_path, char * output_path, uint8_t n, uint8_t f
  */
 int generate_interactions(char * input_path, char * output_path, uint8_t n, uint start_time, uint end_time, uint min_time, uint max_time, uint min_family_interactions, uint max_family_interactions, uint min_outside_interactions, uint max_outside_interactions);
 
+/**
+ *  @brief Counts the number of lines of a file
+ *  @param input_file Pointer to input file stream
+ *  @return Number of lines
+ */
+int line_count(FILE * input_file);
+
+
 #endif /* main_h */

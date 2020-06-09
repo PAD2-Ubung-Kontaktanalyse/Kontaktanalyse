@@ -82,7 +82,10 @@ int generate_persons(char * input_path, char * output_path, int n, float infecti
 
 int generate_interactions(char * input_path, char * output_path, int n, int start_time, int end_time, int min_time, int max_time, int min_interactions, int max_interactions){
     
-	return 0;
+	int lin_count = 0;
+	lin_count = line_count(input_file);
+	
+	return lin_count;
 }
 
 int line_count(FILE *input_file) {

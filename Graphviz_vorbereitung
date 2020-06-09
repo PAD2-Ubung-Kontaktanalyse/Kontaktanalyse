@@ -1,3 +1,32 @@
+///////////////////////////////////////////////////////////////////////
+//
+//
+//	Einlesen der erzeugten Kontaktliste 
+//	und vorbereitung der Daten für die 
+//	Verarbeitung mit Graphviz.
+//	Ausgabe erfolgt [Text einfügen der beschreibt in welcher Formatierung und in welcher weise ausgegeben wird]
+//
+//	Übergebene Parameter: 
+//	
+//	ID Interaktions 	Funktion: Fortlaufende Numerierung der Interkationen 			Format: INTEGER
+//	ID Person 1 		Funktion: Identifizierung von Person 1 					Format: INTEGER
+//	ID Person 2		Funktion: Identifizierung von Person 2 					Format: INTEGER
+//	Start Zeit 		Funktion: Markierung Beginn des Kontaktes				Format: INTEGER
+//	End Zeit 		Funktion: Markierung Ende des Kontaktes					Format: INTEGER
+//
+//	Arbeitsablauf der Funktion 
+//	
+//	
+//	
+//	
+//
+//
+//
+//
+//
+//
+//
+///////////////////////////////////////////////////////////////////////
 #define SIZE 40    
 
    FILE *myfile;
@@ -5,16 +34,16 @@
 
 
 	int Interaktion_ID;                                               // Fortlaufende Nummerrierung des einlesens                 
-	int ID_Person_1;                                                  //
-	int ID_Person_2;
-	int Start_Zeit;
+	int ID_Person_1;                                                  // Identifikationsnummer von Person 1 
+	int ID_Person_2;					 	  // Identifikationsnummer von Person 2
+	int Start_Zeit;								
 	int End_Zeit;
 
-    printf("Geben Sie die Bezeichnung der Datei ein:\n");		      	// Dateiname abfragen
+    printf("Geben Sie die Bezeichnung der Datei ein:\n");		  // Dateiname abfragen
     scanf("%s", Dateiname);
 
-    myfile = fopen(Dateiname, "r");                                 // Datei zum schreiben öffnen 
-        if(myfile == NULL) {                                        // Fehlerbehandlung 
+    myfile = fopen(Dateiname, "r");                                 	  // Datei zum schreiben öffnen 
+        if(myfile == NULL) {                                        	  // Fehlerbehandlung 
             printf("could not oben %s", Dateiname);
             return 0;
         }

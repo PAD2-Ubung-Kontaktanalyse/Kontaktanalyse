@@ -7,6 +7,8 @@
 int main()
 {
     char input[11] = "";
+    char input_2[11] = "";
+    char input_3[11] = "";
     int n = 10;
     int n2 = 0;
     int n3 = 0;
@@ -35,56 +37,62 @@ int main()
         scanf(" %s", input);
         n = atoi(input);
 
-    }while(n <= 0);
+    }while(n <= 0 || n > 9);
 
 
-    if(n >= 1 && n <= 9)
+        if(n >= 1 && n <= 9)
+        {
+            switch(n)
+                {
+
+                case 1: do{
+                        printf("Bitte waehlen Sie eine der folgenden Aktionen aus:\n\n");
+                        printf("[1] - Person erstellen\n");
+                        printf("[2] - Person bearbeiten\n");
+                        printf("[3] - Person entfernen\n");
+                        scanf(" %s", input_2);
+                        n2 = atoi(input_2);
+                }while(n2 <= 0 || n2 > 3);
+                        break;
+
+                case 2: do{
+                        printf("Bitte waehlen Sie eine der folgenden Aktionen aus:\n\n");
+                        printf("[1] - Kontakt erstellen\n");
+                        printf("[2] - Kontakt bearbeiten\n");
+                        printf("[3] - Kontakt entfernen\n");
+                        scanf(" %s", input_3);
+                        n3 = atoi(input_3);
+                }while(n3 <= 0 || n3 > 3);
+                        break;
+
+                case 3: printf("Verbindung zwischen zwei Personen analysieren\n");
+                        break;
+
+                case 4: printf("Liste der Personen ausgeben\n");
+                        break;
+
+                case 5: printf("Liste der Kontakte ausgeben\n");
+                        break;
+
+                case 6: printf("Direkte Kontakte zu einer Person anzeigen\n");
+                        break;
+
+                case 7: printf("Durchschnittskontaktzeit einer Person anzeigen\n");
+                        break;
+
+                case 8: printf("Statistik anzeigen\n");
+                        break;
+
+                case 9: printf("Programm beenden\n");
+                        break;
+
+                default: printf("Falsche Eingabe!\n");
+                }
+        }
+    else
     {
-        switch(n)
-            {
-
-            case 1: printf("Bitte waehlen Sie eine der folgenden Aktionen aus:\n\n");
-                    printf("[1] - Person erstellen\n");
-                    printf("[2] - Person bearbeiten\n");
-                    printf("[3] - Person entfernen\n");
-                    scanf("%d", &n2);
-                    break;
-
-            case 2: printf("Bitte waehlen Sie eine der folgenden Aktionen aus:\n\n");
-                    printf("[1] - Kontakt erstellen\n");
-                    printf("[2] - Kontakt bearbeiten\n");
-                    printf("[3] - Kontakt entfernen\n");
-                    scanf("%d", &n3);
-                    break;
-
-            case 3: printf("Verbindung zwischen zwei Personen analysieren\n");
-                    break;
-
-            case 4: printf("Liste der Personen ausgeben\n");
-                    break;
-
-            case 5: printf("Liste der Kontakte ausgeben\n");
-                    break;
-
-            case 6: printf("Direkte Kontakte zu einer Person anzeigen\n");
-                    break;
-
-            case 7: printf("Durchschnittskontaktzeit einer Person anzeigen\n");
-                    break;
-
-            case 8: printf("Statistik anzeigen\n");
-                    break;
-
-            case 9: printf("Programm beenden\n");
-                    break;
-
-            default: printf("Falsche Eingabe!\n");
-            }
+        printf("Falsche Eingabe!\n\n");
     }
-else
-{
-    printf("Falsche Eingabe!\n\n");
-}
 
 
     return 0;

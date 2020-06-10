@@ -29,11 +29,9 @@ int generate_persons(char * input_path, char * output_path, int n, float infecti
  *  @param end_time End of the time frame for all interactions in minutes since epoch
  *  @param min_time Minimum time span of an interaction in minutes
  *  @param max_time Maximum time span of an interaction in minutes
- *  @param min_interactions Minimum number of interactions with persons outside the family
- *  @param max_interactions Maximum number of interactions with persons outside the family
  *  @return Returns 0 in case of sucess, -1 for input error, -2 for output error
  */
-int generate_interactions(char * input_path, char * output_path, int n, int start_time, int end_time, int min_time, int max_time, int min_interactions, int max_interactions);
+int generate_interactions(char * input_path, char * output_path, int n, int start_time, int end_time, int min_time, int max_time);
 
 /**
  *  @brief Counts the number of lines of a file

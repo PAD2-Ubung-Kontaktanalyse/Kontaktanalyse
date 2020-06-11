@@ -18,6 +18,8 @@
 //	
 //	
 //	
+
+fclose(fp); // Datei schließen
 //	
 //
 //
@@ -31,7 +33,7 @@
 
    FILE *myfile;
     char Dateiname[80];
-
+   FILE *newfile;
 
 	int Interaktion_ID;                                               // Fortlaufende Nummerrierung des einlesens                 
 	int ID_Person_1;                                                  // Identifikationsnummer von Person 1 
@@ -43,13 +45,21 @@
     scanf("%s", Dateiname);
 
     myfile = fopen(Dateiname, "r");                                 	  // Datei zum schreiben öffnen 
+    newfile = fopen("beispiel.txt","w");				  // Datei neu erzeugen bzw. ueberschreiben, wenn es sie schon gibt	
+    
         if(myfile == NULL) {                                        	  // Fehlerbehandlung 
             printf("could not oben %s", Dateiname);
             return 0;
         }
         
         while(fscanf(myfile, " %d,%d,%d,%d,%d", &Interaktion_ID, &ID_Person_1, &ID_Person_2. %Start_Zeit, %End_Zeit) != EOF) {       // Einlesen der Zeilen bis End Of File
-            
+           
+	// IN TXT SCHREIBEN   
+	  
+	 fprintf(fp,"%d -> %d\n", &ID_Person1, &ID_Person2); 
+	   
+	   
         printf("\n");
         }
     fclose(myfile);
+    fclose(newfile);

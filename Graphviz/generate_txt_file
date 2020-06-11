@@ -25,22 +25,28 @@ int create_txt(FILE *myfile, FILE *newfile){
 
 	int Interaktion_ID;                                                   // Fortlaufende Nummerrierung des einlesens                 
 	int ID_Person_1;                                                      // Identifikationsnummer von Person 1 
-	int ID_Person_2;					                                   // Identifikationsnummer von Person 2
+	int ID_Person_2;					              // Identifikationsnummer von Person 2
 	int Start_Zeit;								
 	int End_Zeit;
 
-    printf("Geben Sie die Bezeichnung der Datei ein:\n");		            // Dateiname abfragen
+    printf("Geben Sie die Bezeichnung der Datei ein:\n");		      // Dateiname abfragen
     scanf("%s", Dateiname);
 
-    myfile = fopen(Dateiname, "r");                                 	  // Datei zum schreiben öffnen 
-    newfile = fopen("Code_Graphviz.txt","w");				                    // Datei neu erzeugen bzw. ueberschreiben, wenn es sie schon gibt	
+    myfile = fopen(Dateiname, "r");                                 	      // Datei zum schreiben öffnen 
+    newfile = fopen("Code_Graphviz.txt","w");				      // Datei neu erzeugen bzw. ueberschreiben, wenn es sie schon gibt	
     
-        if(myfile == NULL) {                                        	  // Fehlerbehandlung 
+        if(myfile == NULL) {                                        	      // Fehlerbehandlung 
             printf("could not oben %s", Dateiname);
             return 0;
         }
         
-        while(fscanf(myfile, " %d,%d,%d,%d,%d", &Interaktion_ID, &ID_Person_1, &ID_Person_2. %Start_Zeit, %End_Zeit) != EOF) {       // Einlesen der Zeilen bis End Of File
+        while(fscanf(myfile, " %d,%d,%d,%d,%d", 
+			&Interaktion_ID, 
+			&ID_Person_1, 
+			&ID_Person_2. 
+			%Start_Zeit, 
+			%End_Zeit
+		     ) != EOF) {    					      // Einlesen der Zeilen bis End Of File
 	 
 	 fprintf(newfile,"digraph G { \n\n");
 	 fprintf(newfile,"%d -> %d\n", &ID_Person1, &ID_Person2); 

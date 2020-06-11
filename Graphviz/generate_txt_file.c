@@ -124,7 +124,7 @@ infectfile = fopen(Infectname, "r");
 	
 printf("Geben Sie die Bezeichnung der Datei ein in die geschrieben werden soll:\n Achtung! 80 Zeichen Maximum!\n");		      // Dateiname abfragen
 scanf("%s", Nametxt);
-newfile = fopen("Code_Graphviz %d .txt", Nametxt, "w");				      // Datei neu erzeugen bzw. ueberschreiben, wenn es sie schon gibt	
+newfile = fopen("Code_Graphviz_with_time %d .txt", Nametxt, "w");				      // Datei neu erzeugen bzw. ueberschreiben, wenn es sie schon gibt	
  
 printf("Bitte geben Sie ein ab welchen Zeitpunkt die Analyse starten soll\n");
 scanf("%d", &Zeiteingabe);

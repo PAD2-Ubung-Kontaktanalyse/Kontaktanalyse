@@ -50,8 +50,6 @@
         
         while(fscanf(myfile, " %d,%d,%d,%d,%d", &Interaktion_ID, &ID_Person_1, &ID_Person_2. %Start_Zeit, %End_Zeit) != EOF) {       // Einlesen der Zeilen bis End Of File
             
-            while(Div != 0);
-
         printf("\n");
         }
     fclose(myfile);

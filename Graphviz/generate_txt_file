@@ -17,6 +17,13 @@
 #ifndef scriptwriter_h
 #define scriptwriter_h 
  
+/**
+ *  @brief Reads generated List and converts it into Graphviz script 
+ *  @details Format of output file: .txt with script
+ *  @param input_path Path + file name of the full list of names
+ *  @param output_path Path + file name where to output should be saved
+ *  @return Returns 0
+ */
  
 int create_txt(FILE *myfile, FILE *newfile){
    FILE *myfile;
@@ -58,3 +65,5 @@ fclose(myfile);
 fclose(newfile);
 
 }
+
+#endif /* scriptwriter_h */

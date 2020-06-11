@@ -43,13 +43,18 @@ int create_txt(FILE *myfile, FILE *newfile){
     
     printf("Geben Sie die Bezeichnung der Datei ein:\n Achtung! 80 Zeichen Maximum!\n");		      // Dateiname abfragen
     scanf("%s", Nametxt);
-    newfile = fopen("Code_Graphviz %d .txt", &Nametxt, "w");				      // Datei neu erzeugen bzw. ueberschreiben, wenn es sie schon gibt	
+    newfile = fopen("Code_Graphviz %d .txt", Nametxt, "w");				      // Datei neu erzeugen bzw. ueberschreiben, wenn es sie schon gibt	
     
         if(myfile == NULL) {                                        	      // Fehlerbehandlung 
             printf("could not oben %s", Dateiname);
             return 0;
         }
-        
+	if(newfile == NULL) {                                        	      // Fehlerbehandlung 
+            printf("could not oben Code_Graphviz %s", Nametxt);
+            return 0;
+        }
+   	fprintf(newfile,"digraph G { \n\n"); 
+	
         while(fscanf(myfile, " %d,%d,%d,%d,%d,%d", 
 			&Interaktion_ID, 
 			&ID_Person_1, 
@@ -63,19 +68,15 @@ int create_txt(FILE *myfile, FILE *newfile){
 	 
 	 
 	 if(Infektionsstatus == 0) {
-	 fprintf(newfile,"digraph G { \n\n");
 	 fprintf(newfile,"	%d -> %d;\n", &ID_Person1, &ID_Person2); 
 	 fprintf(newfile,"\n}"};
 	 }   else {
-	    	 fprintf(newfile,"digraph G { \n\n");
-	 	 fprintf(newfile,"	%d  -> %d\n [color="0.002 0.999 0.999"];", &ID_Person1, &ID_Person2); 
-		 fprintf(newfile,"	%d [color="0.000 1.000 1.000"];", &ID_Person1);
-		 fprintf(newfile,"	%d [color="0.000 1.000 1.000"];", &ID_Person2);
-	 	 fprintf(newfile,"\n}"};
-	    
+	 	 fprintf(newfile,"	%d  -> %d\n [color="0.002 0.999 0.999"];\n", &ID_Person1, &ID_Person2); 
+		 fprintf(newfile,"	%d [color="0.000 1.000 1.000"];\n", &ID_Person1);
+		 fprintf(newfile,"	%d [color="0.000 1.000 1.000"];\n", &ID_Person2);  
 	    }
         }
-	
+fprintf(newfile,"\n}"};	
 fclose(myfile);
 fclose(newfile);
 

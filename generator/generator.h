@@ -15,7 +15,7 @@
  *  @param output_path Path + file name where to output should be saved
  *  @param n Number of persons to generate
  *  @param infection_rate Probability for a person to be flagged "infected". Range: [0-1]
- *  @return Returns 0 in case of sucess, -1 for input error, -2 for output error
+ *  @return Returns 0 in case of success, -1 for input error, -2 for output error
  */
 int generate_persons(char * input_path, char * output_path, int n, float infection_rate);
 

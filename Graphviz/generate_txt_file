@@ -8,7 +8,7 @@
 //	Daten entsprechend in die neue .txt Datei geschrieben
 //	Das Format der .txt Datei kann in Graphviz online eingegeben werden. 
 //
-//	https://dreampuf.github.io/GraphvizOnline/#digraph G
+//	http://www.webgraphviz.com/
 //
 //	Hierzu bitte das vorhande Skript mit dem Inhalt der .txt Datei ersetzen. 
 //

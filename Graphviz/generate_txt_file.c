@@ -1,5 +1,6 @@
 //	Header für PAD2-Kontaktanalyse
-//
+//	int create_txt()
+//	int create_txt_with_time()
 //	Arbeitsablauf der Funktion 
 //	
 //	Öffnen der Angegebenen Quellatei

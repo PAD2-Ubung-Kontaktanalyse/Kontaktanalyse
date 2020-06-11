@@ -54,7 +54,7 @@
            
 	// IN TXT SCHREIBEN   
 	 
-	 fprintf(newfile,"{\n");
+	 fprintf(newfile,"digraph G { \n\n");
 	 fprintf(newfile,"%d -> %d\n", &ID_Person1, &ID_Person2); 
 	 fprintf(newfile,"\n}"};
 	   

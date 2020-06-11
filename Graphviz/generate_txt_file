@@ -26,21 +26,24 @@
  */
  
 int create_txt(FILE *myfile, FILE *newfile){
-   FILE *myfile;
-    char Dateiname[80];
-   FILE *newfile;
 
+   FILE *myfile;
+    char Dateiname[81];
+   FILE *newfile;
+    char Nametxt[81]
 	int Interaktion_ID;                                                   // Fortlaufende Nummerrierung des einlesens                 
 	int ID_Person_1;                                                      // Identifikationsnummer von Person 1 
 	int ID_Person_2;					              // Identifikationsnummer von Person 2
 	int Start_Zeit;								
 	int End_Zeit;
 
-    printf("Geben Sie die Bezeichnung der Datei ein:\n");		      // Dateiname abfragen
+    printf("Geben Sie die Bezeichnung der Datei ein:\n Achtung! 80 Zeichen Maximum!\n");		      // Dateiname abfragen
     scanf("%s", Dateiname);
-
     myfile = fopen(Dateiname, "r");                                 	      // Datei zum schreiben öffnen 
-    newfile = fopen("Code_Graphviz.txt","w");				      // Datei neu erzeugen bzw. ueberschreiben, wenn es sie schon gibt	
+    
+    printf("Geben Sie die Bezeichnung der Datei ein:\n Achtung! 80 Zeichen Maximum!\n");		      // Dateiname abfragen
+    scanf("%s", Nametxt);
+    newfile = fopen("Code_Graphviz %d .txt", &Nametxt, "w");				      // Datei neu erzeugen bzw. ueberschreiben, wenn es sie schon gibt	
     
         if(myfile == NULL) {                                        	      // Fehlerbehandlung 
             printf("could not oben %s", Dateiname);

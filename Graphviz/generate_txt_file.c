@@ -92,7 +92,7 @@ fprintf(newfile,"\n}"};
 fclose(myfile);
 fclose(newfile);
 fclose(infectfile);
-
+return 0;
 }
 
 	
@@ -171,7 +171,7 @@ fprintf(newfile,"\n}"};
 fclose(myfile);
 fclose(newfile);
 fclose(infectfile);
-
+return 0;
 }
 	
 	

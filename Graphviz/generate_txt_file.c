@@ -14,169 +14,81 @@
 //	Hierzu bitte das vorhande Skript mit dem Inhalt der .txt Datei ersetzen. 
 //
 ///////////////////////////////////////////////////////////////////////
-  
-#ifndef scriptwriter_h
-#define scriptwriter_h 
- 
+
+#import <stdio.h>
+#import <stdlib.h>
+#import "generate_txt_file.h"
+
 /**
  *  @brief Reads generated List and converts it into Graphviz script 
  *  @details Format of output file: .txt with script
- *  @param input_path Path + file name of the full list of names
+ *  @param persons_path Path + file name of the full list of persons
+ *  @param interactions_path Path + file name of the full list of interactions
  *  @param output_path Path + file name where to output should be saved
- *  @return Returns 0
+ *  @param start_timeframe Beginning of the time frame in minutes since epoch, -1 to disable timeframe
+ *  @param end_timeframe End of the time frame in minutes since epoch
+ *  @return Returns 0 if successful, -1 in case of an error
  */
  
-int create_txt(){
+int create_graph(char *persons_path, char *interactions_path, char *output_path, int start_timeframe, int end_timeframe){
 
-FILE *myfile;
-   char Dateiname[81];
-FILE *newfile;
-   char Nametxt[81];
-FILE *infectfile;
-   char Infectname[81];
+    FILE *persons_file;
+    FILE *interactions_file;
+    FILE *output_file;
+    
+    int Interaktion_ID;         // Fortlaufende Nummerrierung des Einlesens
+    int ID_Person_1;            // Identifikationsnummer von Person 1
+    int ID_Person_2;            // Identifikationsnummer von Person 2
+    int Person_ID = 0;
+    int Start_Zeit = -1;
+    int End_Zeit = 0;
+    int Infektionsstatus = 0;
+    char Name_Person[80] = "";
 
-int Interaktion_ID;                                                   // Fortlaufende Nummerrierung des einlesens
-int ID_Person_1;                                                      // Identifikationsnummer von Person 1
-int ID_Person_2;
-int Person_ID;								// Identifikationsnummer von Person 2
-int Start_Zeit;
-int End_Zeit;
-int Infektionsstatus;
-char Name_Person[80];
-
-printf("Geben Sie die Bezeichnung der Datei ein welche die Interaktionen enthält:\n Achtung! 80 Zeichen Maximum!\n");		      // Dateiname abfragen
-scanf("%s", Dateiname);
-myfile = fopen(Dateiname, "r");                                 	      // Datei zum schreiben öffnen
-
-printf("Geben Sie die Bezeichnung der Datei ein welche den Infektionsstatus festhalten:\n Achtung! 80 Zeichen Maximum!\n");		      // Dateiname abfragen
-scanf("%s", Infectname);
-infectfile = fopen(Infectname, "r");
-
-printf("Geben Sie die Bezeichnung der Datei ein in die geschrieben werden soll:\n Achtung! 80 Zeichen Maximum!\n");		      // Dateiname abfragen
-scanf("%s", Nametxt);
-newfile = fopen("Code_Graphviz", "w");				      // Datei neu erzeugen bzw. ueberschreiben, wenn es sie schon gibt
-
-if(myfile == NULL) {                                        	      // Fehlerbehandlung
-	printf("could not open %s", Dateiname);
-	return 0;
-}
-if(newfile == NULL) {                                        	      // Fehlerbehandlung
-        printf("could not open  %s", Nametxt);
-        return 0;
-}
-if(newfile == NULL) {                                        	      // Fehlerbehandlung
-        printf("could not open  %s", Infectname);
-        return 0;
-}
-
-fprintf(newfile,"digraph G { \n\n");
-
-while(fscanf(myfile, " %d,%d,%d,%d,%d",
-	&Interaktion_ID,
-	&ID_Person_1,
-	&ID_Person_2,
-	&Start_Zeit,
-	&End_Zeit)!= EOF)    					      // Einlesen der Zeilen bis End Of File
-	{
-	fprintf(newfile,"	%d -> %d;\n", ID_Person_1, ID_Person_2);
-        }
-while(fscanf(infectfile, " %d,%d,%d",
-	&Person_ID,
-	&Name_Person,
-	&Infektionsstatus) != EOF)
-	{
-		if(Infektionsstatus == 1) {
-		fprintf(infectfile,"	%d [color=\"0.000 1.000 1.000\"];\n", Person_ID);
-		}
-	}
-fprintf(newfile,"\n}");
-
-fclose(myfile);
-fclose(newfile);
-fclose(infectfile);
-return 0;
-}
-
-
-	
-int create_txt_with_time(){
-
-FILE *myfile;
-   char Dateiname[81];
-FILE *newfile;
-   char Nametxt[81];
-FILE *infectfile;
-   char Infectname[81];
-
-int Interaktion_ID;                                                   // Fortlaufende Nummerrierung des einlesens
-int ID_Person_1;                                                      // Identifikationsnummer von Person 1
-int ID_Person_2;
-int Person_ID;								// Identifikationsnummer von Person 2
-int Start_Zeit;
-int End_Zeit;
-int Infektionsstatus;
-int Zeit_eingabe;
-char Name_Person[80];
-
-printf("Geben Sie die Bezeichnung der Datei ein welche die Interaktionen enthält:\n Achtung! 80 Zeichen Maximum!\n");		      // Dateiname abfragen
-scanf("%s", Dateiname);
-myfile = fopen(Dateiname, "r");                                 	      // Datei zum schreiben öffnen
-
-printf("Geben Sie die Bezeichnung der Datei ein welche den Infektionsstatus festhalten:\n Achtung! 80 Zeichen Maximum!\n");		      // Dateiname abfragen
-scanf("%s", Infectname);
-infectfile = fopen(Infectname, "r");
-
-printf("Geben Sie die Bezeichnung der Datei ein in die geschrieben werden soll:\n Achtung! 80 Zeichen Maximum!\n");		      // Dateiname abfragen
-scanf("%s", Nametxt);
-newfile = fopen("Code_Graphviz_with_time", "w");				      // Datei neu erzeugen bzw. ueberschreiben, wenn es sie schon gibt
-
-printf("Bitte geben Sie ein ab welchen Zeitpunkt die Analyse starten soll\n");
-scanf("%d", &Zeit_eingabe);
-
-
-if(myfile == NULL) {                                        	      // Fehlerbehandlung
-	printf("could not open %s", Dateiname);
-	return 0;
-}
-if(newfile == NULL) {                                        	      // Fehlerbehandlung
-        printf("could not open  %s", Nametxt);
-        return 0;
-}
-if(newfile == NULL) {                                        	      // Fehlerbehandlung
-        printf("could not open  %s", Infectname);
-        return 0;
-}
-
-fprintf(newfile,"digraph G { \n\n");
-
-  while(fscanf(myfile, " %d,%d,%d,%d,%d",
-    &Interaktion_ID,
-    &ID_Person_1,
-    &ID_Person_2,
-    &Start_Zeit,
-    &End_Zeit) != EOF)    					      // Einlesen der Zeilen bis End Of File
-    {
-        if(Zeit_eingabe > Start_Zeit) {
-        fprintf(newfile,"	%d -> %d;\n", ID_Person_1, ID_Person_2);
-        }
+    persons_file = fopen(persons_path, "r"); // Liste mit Personen oeffnen
+    interactions_file = fopen(interactions_path, "r"); // Liste mit Interaktionen oeffnen
+    output_file = fopen(output_path, "w"); // Ausgabe-Datei neu erzeugen bzw. ueberschreiben, wenn es sie schon gibt
+    
+    if(persons_file == NULL) {                                        	      // Fehlerbehandlung
+        printf("could not open %s", persons_path);
+        return -1;
+    }
+    if(interactions_file == NULL) {                                        	  // Fehlerbehandlung
+        printf("could not open  %s", interactions_path);
+        return -1;
+    }
+    if(output_file == NULL) {                                        	      // Fehlerbehandlung
+        printf("could not open  %s", output_path);
+        return -1;
     }
 
-  while(fscanf(infectfile, " %d,%d,%d",
-    &Person_ID,
-    &Name_Person,
-    &Infektionsstatus) != EOF)
-    {
-      if(Infektionsstatus == 1) {
-      fprintf(infectfile,"	%d [color=\"0.000 1.000 1.000\"];\n", Person_ID);
-      }
-    }
-fprintf(newfile,"\n}");
+    fprintf(output_file,"digraph G { \n\n");
 
-fclose(myfile);
-fclose(newfile);
-fclose(infectfile);
-return 0;
+    rewind(interactions_file);
+    while(fscanf(interactions_file, " %d; %d; %d; %d; %d",
+        &Interaktion_ID,
+        &ID_Person_1,
+        &ID_Person_2,
+        &Start_Zeit,
+        &End_Zeit) != EOF)    					    // Einlesen der Zeilen bis End Of File
+        {
+            if(start_timeframe == -1 || (Start_Zeit > start_timeframe && Start_Zeit < end_timeframe && End_Zeit < end_timeframe && End_Zeit > start_timeframe)) {
+            fprintf(output_file,"\t%d -> %d;\n", ID_Person_1, ID_Person_2);
+            }
+    }
+
+    rewind(persons_file);
+    while(fscanf(persons_file, " %d; %s %d", &Person_ID, Name_Person, &Infektionsstatus) != EOF)
+    {
+        if(Infektionsstatus == 1) {
+            fprintf(output_file,"\t%d [color=\"0.000 1.000 1.000\"];\n", Person_ID);
+        }
+    }
+    
+    fprintf(output_file,"\n}");
+    
+    fclose(persons_file);
+    fclose(interactions_file);
+    fclose(output_file);
+    return 0;
 }
-	
-	
-#endif /* scriptwriter_h */

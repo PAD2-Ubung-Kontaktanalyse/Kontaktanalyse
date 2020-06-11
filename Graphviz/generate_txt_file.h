@@ -15,29 +15,20 @@
 //
 ///////////////////////////////////////////////////////////////////////
   
-#ifndef scriptwriter_h
-#define scriptwriter_h 
- 
-/**
- *  @brief Reads generated List and converts it into Graphviz script 
- *  @details Format of output file: .txt 
- *  @param input_path Path + file name of the full list of names
- *  @param input_path Path + file name of the infection list
- *  @param output_path Path + file name where to output should be saved
- *  @return Returns 0
- */
- 
-int create_txt(){
+#ifndef generate_txt_file_h
+#define generate_txt_file_h
 
 /**
- *  @brief Reads generated List specific time and converts it into Graphviz script from 
- *  @details Format of output file: .txt 
- *  @param input_path Path + file name of the full list of names
- *  @param input_path Path + file name of the infection list
+ *  @brief Reads generated List and converts it into Graphviz script
+ *  @details Format of output file: .txt with script
+ *  @param persons_path Path + file name of the full list of persons
+ *  @param interactions_path Path + file name of the full list of interactions
  *  @param output_path Path + file name where to output should be saved
- *  @return Returns 0
+ *  @param start_timeframe Beginning of the time frame in minutes since epoch, -1 to disable timeframe
+ *  @param end_timeframe End of the time frame in minutes since epoch
+ *  @return Returns 0 if successful, -1 in case of an error
  */
+ 
+int create_graph(char *persons_path, char *interactions_path, char *output_path, int start_timeframe, int end_timeframe);
 
-int create_txt_with_time(){
-
-#endif /* scriptwriter_h */
+#endif /* generate_txt_file_h */

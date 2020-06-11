@@ -43,7 +43,7 @@
     scanf("%s", Dateiname);
 
     myfile = fopen(Dateiname, "r");                                 	  // Datei zum schreiben öffnen 
-    newfile = fopen("beispiel.txt","w");				  // Datei neu erzeugen bzw. ueberschreiben, wenn es sie schon gibt	
+    newfile = fopen("Code_Graphviz.txt","w");				  // Datei neu erzeugen bzw. ueberschreiben, wenn es sie schon gibt	
     
         if(myfile == NULL) {                                        	  // Fehlerbehandlung 
             printf("could not oben %s", Dateiname);
@@ -53,11 +53,12 @@
         while(fscanf(myfile, " %d,%d,%d,%d,%d", &Interaktion_ID, &ID_Person_1, &ID_Person_2. %Start_Zeit, %End_Zeit) != EOF) {       // Einlesen der Zeilen bis End Of File
            
 	// IN TXT SCHREIBEN   
-	  
-	 fprintf(fp,"%d -> %d\n", &ID_Person1, &ID_Person2); 
+	 
+	 fprintf(newfile,"{\n");
+	 fprintf(newfile,"%d -> %d\n", &ID_Person1, &ID_Person2); 
+	 fprintf(newfile,"\n}"};
 	   
-	   
-        printf("\n");
+
         }
     fclose(myfile);
     fclose(newfile);

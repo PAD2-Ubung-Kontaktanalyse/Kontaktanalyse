@@ -50,18 +50,28 @@ int create_txt(FILE *myfile, FILE *newfile){
             return 0;
         }
         
-        while(fscanf(myfile, " %d,%d,%d,%d,%d", 
+        while(fscanf(myfile, " %d,%d,%d,%d,%d,%d", 
 			&Interaktion_ID, 
 			&ID_Person_1, 
-			&ID_Person_2. 
-			%Start_Zeit, 
-			%End_Zeit
+			&ID_Person_2,
+			&Start_Zeit, 
+			&End_Zeit,
+			&Infektionsstatus,
 		     ) != EOF) {    					      // Einlesen der Zeilen bis End Of File
 	 
+	 if(Start_Zeit < Ent_Zeit || Start_Zeit = End_Zeit)
+	 
+	 
+	 if(Infektionsstatus = 0) {
 	 fprintf(newfile,"digraph G { \n\n");
-	 fprintf(newfile,"%d -> %d\n", &ID_Person1, &ID_Person2); 
+	 fprintf(newfile,"	%d -> %d;\n", &ID_Person1, &ID_Person2); 
 	 fprintf(newfile,"\n}"};
-	  
+	 }   else {
+	    	 fprintf(newfile,"digraph G { \n\n");
+	 	 fprintf(newfile,"	%d -> %d\n [color="0.002 0.999 0.999"];", &ID_Person1, &ID_Person2); 
+	 	 fprintf(newfile,"\n}"};
+	    
+	    }
         }
 	
 fclose(myfile);

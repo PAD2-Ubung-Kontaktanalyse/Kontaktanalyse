@@ -35,7 +35,4 @@ int create_list_persons(char *persons_path, char *output_path, char *Name_Person
     return 0;
 }
 
-int main() {
-int create_graph();
-return 0;
-}
+

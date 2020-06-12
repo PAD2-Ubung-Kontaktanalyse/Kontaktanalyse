@@ -3,7 +3,7 @@
 #include <string.h>
 
 
-int create_list_interactions(char *persons_path, char *interactions_path, char *output_path, int start_timeframe, int end_timeframe){
+int create_list_interactions(char *persons_path, char *interactions_path, char *output_path, char *Name_zur_Analyse){
 
     FILE *persons_file;
     FILE *interactions_file;
@@ -17,7 +17,6 @@ int create_list_interactions(char *persons_path, char *interactions_path, char *
     int End_Zeit = 0;
     int Infektionsstatus = 0;
     char Name_Person[80] = "";
-    char Name_zur_Analyse[80] = "";
     int ID = 0;
     persons_file = fopen(persons_path, "r"); // Liste mit Personen oeffnen
     interactions_file = fopen(interactions_path, "r"); // Liste mit Interaktionen oeffnen
@@ -36,8 +35,6 @@ int create_list_interactions(char *persons_path, char *interactions_path, char *
         return -1;
     }
     
-    printf("Bitte geben Sie einen Namen ein:\n");
-    scanf("%c", Name_zur_Analyse);
     fprintf(output_file,"Herr/Frau %c hatte folgende Kontakte:\n",Name_zur_Analyse);
     
     rewind(persons_file);

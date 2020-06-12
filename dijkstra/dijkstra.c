@@ -36,7 +36,7 @@ int main()
 
 }
 
-int dij_array(int id_1,char * input_path_interactions, int kont, int time_matrix[kont][kont])
+int dij_array(int id_1, char * input_path_interactions, int kont)
 {
 
 
@@ -47,6 +47,8 @@ int dij_array(int id_1,char * input_path_interactions, int kont, int time_matrix
     int person_id_2;
     int start_time;
     int end_time;
+    
+    int time_matrix[kont][kont];
 
 
     int tot_time=0;

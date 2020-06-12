@@ -30,11 +30,11 @@ int main()
 
           printf("             Bitte waehlen Sie eine der folgenden Aktionen aus:\n\n");
           printf("             Menu:\n\n");
-          printf("    || [1] - Datensatz generieren                                    ||\n");
-          printf("    || [2]-  Datensatz laden                                    ||\n");
+          printf("    || [1] - Datensatz generieren                                   ||\n");
+          printf("    || [2]-  Datensatz laden                                        ||\n");
           printf("    || [3] - Verbindung zwischen zwei Personen analysieren          ||\n");
-          printf("    || [4]-  Liste der Personen ausgeben                            ||\n");
-          printf("    || [5] - Liste der Kontakte ausgeben                            ||\n");
+          printf("    || [4]-  Graph aus Interaktionen generieren                     ||\n");
+          printf("    || [5] - Liste der infizierten Personen ausgeben                ||\n");
           printf("    || [6] - Direkte Kontakte zu einer Person anzeigen              ||\n");
           printf("    || [7] - Durchschnittskontaktzeit einer Person anzeigen         ||\n");
           printf("    || [8] - Statistik anzeigen                                     ||\n");
@@ -68,17 +68,17 @@ int main()
                               printf("\nName des neuen Personen-Datensatzes: ");
                               scanf(" %s\n", person_file);
 
-                              int n = 0;
+                              int count = 0;
                               do{
                                 printf("Anzahl der Personen: ");
                                 scanf(" %d", &n);
-                              }while(n <= 0);
+                              }while(count <= 0);
 
                               float infection_rate = 0;
                               do{
                                 printf("Infektionsrate (0.0 - 1.0): ");
                                 scanf(" %f", &infection_rate);
-                              }while(n <= 0);
+                              }while(infection_rate < 0);
 
                               if(generate_persons(name_file, person_file, n, infection_rate) != 0){
                                 printf("Fehler beim Dateizugriff!\n\n");
@@ -86,38 +86,38 @@ int main()
                               break;
 
                             case 2: //INTERAKTIONEN GENERIEREN
-                              printf("\nName des neuen Interaktions-Datensatzes: ");
-                              scanf(" %s\n", interaction_file);
+                              printf("Name des neuen Interaktions-Datensatzes: ");
+                              scanf(" %s", interaction_file);
 
-                              int n = 0;
+                              int count = 0;
                               do{
                                 printf("Anzahl der Interaktionen: ");
-                                scanf(" %d", &n);
-                              }while(n <= 0);
+                                scanf(" %d", &count);
+                              }while(count <= 0);
 
                               int start_time = 0;
                               do{
                                 printf("Start-Zeitpunkt (in Minuten seit Epoch): ");
                                 scanf(" %f", &start_time);
-                              }while(n < 0);
+                              }while(start_time < 0);
 
                               int end_time = 0;
                               do{
                                 printf("End-Zeitpunkt (in Minuten seit Epoch): ");
                                 scanf(" %f", &end_time);
-                              }while(n < 0 || (start_time >= end_time));
+                              }while(end_time < 0 || (start_time >= end_time));
 
                               int min_time = 0;
                               do{
                                 printf("Minimale Kontaktzeit (in Minuten): ");
                                 scanf(" %f", &min_time);
-                              }while(n <= 0);
+                              }while(min_time <= 0);
 
                               int max_time = 0;
                               do{
                                 printf("Maximale Kontaktzeit (in Minuten): ");
                                 scanf(" %f", &max_time);
-                              }while(n < 0 || (max_time < min_time));
+                              }while(max_time < 0 || (max_time < min_time));
 
                               if(generate_interactions(person_file, interaction_file, n, start_time, end_time, min_time, max_time) != 0){
                                 printf("Fehler beim Dateizugriff!\n\n");
@@ -138,19 +138,19 @@ int main()
                           switch(n3){
                             case 0: //ZURUECK
                               break;
-                            case 1:
+                            case 1: //PERSONEN Pfad festlegen
                               printf("Pfad und Name des einzulesenden Personen-Datensatzes: ");
                               scanf(" %s", person_file);
                               printf("\n");
                               break;
-                            case 2:
+                            case 2: //INTERAKTIONEN Pfad festlegen
                               printf("Pfad und Name des einzulesenden Interaktions-Datensatzes: ");
                               scanf(" %s", interaction_file);
                               printf("\n");
                               break;
-                            case 3:
+                            case 3: //NAMEN Pfad festlegen
                               printf("\nPfad und Name der Namensliste (z.B. names.csv): ");
-                              scanf(" %s\n", name_file);
+                              scanf(" %s", name_file);
                               printf("\n");
                           }
 
@@ -159,20 +159,48 @@ int main()
                   case 3: printf("Verbindung zwischen zwei Personen analysieren\n");
                           break;
 
-                  case 4: printf("Liste der Personen ausgeben\n");
+                  case 4: printf("Graph aus Interaktionen generieren\n");
 
+
+                          int start_time = 0;
+                          do{
+                            printf("Start-Zeitpunkt (in Minuten seit Epoch), -1 für gesamtes Zeitfenster: ");
+                            scanf(" %f", &start_time);
+                          }while(start_time < -1);
+
+                          int end_time = 0;
+                          if(start_time > -1){
+                            do{
+                              printf("End-Zeitpunkt (in Minuten seit Epoch): ");
+                              scanf(" %f", &start_time);
+                            }while(n < 0 || end_time < start_time);
+                          }
+
+                          char *output_file = "";
+                          printf("Name der Ausgabedatei: ");
+                          scanf(" %s", output_file);
+
+                          if(generate_txt_file(person_file, interaction_file, output_file, start_time, end_time) != 0){
+                            printf("Beim generieren der Ausgabe ist ein Fehler aufgetreten!\n");
+                          }
                           break;
 
-                  case 5: printf("Liste der Kontakte ausgeben\n");
+                  case 5: printf("Liste der infizierten Personen ausgeben\n");
+                          //print_infected_persons(person_file);
                           break;
 
                   case 6: printf("Direkte Kontakte zu einer Person anzeigen\n");
+                          int person_id = 0;
+                          //print_direct_contacts(person_file, interaction_file, person_id);
                           break;
 
                   case 7: printf("Durchschnittskontaktzeit einer Person anzeigen\n");
+                          int person_id = 0;
+                          //print_avg_contact_time(interaction_file, person_id);
                           break;
 
                   case 8: printf("Statistik anzeigen\n");
+                          //print_stats(person_file, interaction_file);
                           break;
 
                   case 9: printf("Programm beenden\n");

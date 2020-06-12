@@ -253,7 +253,7 @@ int main(){
    int n;
    scanf("%d", &n);
    printf("Bitte geben Sie die Infektionsrate an:\n");
-   float Infectionsrate;
+   float Infektionsrate;
    scanf("%f", &Infektionsrate);
  
    generate_persons(Quelldatei, Outputfile, n, Infektionsrate);

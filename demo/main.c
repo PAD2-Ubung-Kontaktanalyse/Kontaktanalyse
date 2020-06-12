@@ -272,7 +272,7 @@ int main(){
    char Graphviz_Outputfile[50];
    scanf("%s", Graphviz_Outputfile);
           
-   create_graph(Quelldatei,Interaktionen, Graphviz_Outputfile, -1, 0);
+   create_graph(Outputfile,Interaktionen, Graphviz_Outputfile, -1, 0);
           
           
 }

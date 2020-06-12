@@ -11,7 +11,7 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 # add 
 add_subdirectory(generator)
-add_subdirectory(analysis)
+add_subdirectory(dijkstra)
 add_subdirectory(Graphviz)
 add_executable(main main.c)
 

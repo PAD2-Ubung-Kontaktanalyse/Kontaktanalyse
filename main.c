@@ -190,7 +190,10 @@ int main()
                           break;
 
                   case 6: printf("Direkte Kontakte zu einer Person anzeigen\n");
-                          int create_list_interactions(char *persons_path, char *interactions_path, char *output_path, int start_timeframe, int end_timeframe)
+                          char Name_zur_Analyse[80] = "";
+                          printf("Bitte geben Sie einen Namen ein:\n");
+                          scanf("%c", Name_zur_Analyse);
+                          int create_list_interactions(char *persons_path, char *interactions_path, char *output_path, char *Name_zur_Analyse)
                           break;
 
                   case 7: printf("Durchschnittskontaktzeit einer Person anzeigen\n");

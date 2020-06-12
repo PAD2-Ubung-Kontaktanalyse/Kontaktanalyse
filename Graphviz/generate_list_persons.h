@@ -3,8 +3,8 @@
 //  einer Liste aller Personen
 //
 
-#ifndef generate_txt_file_h
-#define generate_txt_file_h
+#ifndef generate_list_persons_h
+#define generate_list_persons_h
 
 /**
  *  @brief Reads generated List and creates new List
@@ -17,5 +17,5 @@
  
 int create_list_persons(char *persons_path, char *output_path, char *Name_Person){
 
-#endif /* generate_txt_file_h */
+#endif /* generate_list_persons_h */
 

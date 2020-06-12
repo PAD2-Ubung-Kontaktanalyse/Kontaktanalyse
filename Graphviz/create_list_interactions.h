@@ -17,6 +17,6 @@
  *  @return Returns 0 if successful, -1 in case of an error
  */
  
-int create_list_interactions(char *persons_path, char *interactions_path, char *output_path, int start_timeframe, int end_timeframe);
+int create_list_interactions(char *persons_path, char *interactions_path, char *output_path, char *Name_zur_Analyse);
 
 #endif /* generate_list_interactions_h */

@@ -15,6 +15,6 @@
  *  @return Returns 0 if successful, -1 in case of an error
  */
  
-int create_list_infected(char *persons_path, char *output_path, char *Name_Person){
+int create_list_infected(char *persons_path, char *output_path){
 
 #endif /* generate_list_infected_h */

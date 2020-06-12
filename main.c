@@ -186,7 +186,7 @@ int main()
                           break;
 
                   case 5: printf("Liste der infizierten Personen ausgeben\n");
-                          //print_infected_persons(person_file);
+                          create_list_interactions(char *persons_path, char *output_path);
                           break;
 
                   case 6: printf("Direkte Kontakte zu einer Person anzeigen\n");

@@ -190,8 +190,7 @@ int main()
                           break;
 
                   case 6: printf("Direkte Kontakte zu einer Person anzeigen\n");
-                          int person_id = 0;
-                          //print_direct_contacts(person_file, interaction_file, person_id);
+                          int create_list_interactions(char *persons_path, char *interactions_path, char *output_path, int start_timeframe, int end_timeframe)
                           break;
 
                   case 7: printf("Durchschnittskontaktzeit einer Person anzeigen\n");

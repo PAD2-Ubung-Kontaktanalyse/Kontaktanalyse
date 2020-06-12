@@ -3,7 +3,7 @@
 #include <string.h>
 
 
-int create_list_interactions(char *persons_path, char *output_path, int start_timeframe, int end_timeframe){
+int create_list_interactions(char *persons_path, char *output_path){
 
     FILE *persons_file;
     FILE *output_file;

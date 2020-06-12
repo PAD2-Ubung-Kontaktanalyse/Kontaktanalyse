@@ -249,10 +249,10 @@ int main(){
    printf("Bitte geben Sie den Pfad für die Outputdatei ein:\n");
    char Outputfile[50];
    scanf("%s", Outputfile);
-   printf("Bitte geben Sie die Anzahl der Personen ein:\n);
+   printf("Bitte geben Sie die Anzahl der Personen ein:\n");
    int n;
    scanf("%d", &n);
-   printf("Bitte geben Sie die Infektionsrate an:\n);
+   printf("Bitte geben Sie die Infektionsrate an:\n");
    float Infectionsrate;
    scanf("%f", &Infektionsrate);
  
@@ -273,6 +273,7 @@ int main(){
           
           
    }
+}
           
     
           

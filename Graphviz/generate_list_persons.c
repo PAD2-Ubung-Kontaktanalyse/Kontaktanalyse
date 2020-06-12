@@ -8,8 +8,6 @@ int create_list_persons(char *persons_path, char *output_path, char *Name_Person
     FILE *persons_file;
     FILE *output_file;
     
-    char Name_Person[80] = "";
-
     persons_file = fopen("persons_path.csv", "r"); // Liste mit Personen oeffnen
     output_file = fopen("output_path.txt", "w+"); // Ausgabe-Datei neu erzeugen bzw. ueberschreiben, wenn es sie schon gibt
 

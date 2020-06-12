@@ -242,3 +242,40 @@ int create_graph(char *persons_path, char *interactions_path, char *output_path,
     fclose(output_file);
     return 0;
 }
+
+int main(){ 
+   printf("Bitte geben Sie den Pfad für die Namensdatei ein:\n");
+   char Quelldatei[50];
+   scanf("%s", Quelldatei);
+   printf("Bitte geben Sie den Pfad für die Outputdatei ein:\n");
+   char Outputfile[50];
+   scanf("%s", Outputfile);
+   printf("Bitte geben Sie die Anzahl der Personen ein:\n);
+   int n;
+   scanf("%d", &n);
+   printf("Bitte geben Sie die Infektionsrate an:\n);
+   float Infectionsrate;
+   scanf("%f", &Infektionsrate);
+ 
+   generate_persons(Quelldatei, Outputfile, n, Infektionsrate);
+          
+   int start_time = 100;
+   int end_time = 200;
+   int min_time = 5;
+   int max_time = 30;
+          
+   generate_interactions(Outputfile, Quelldatei, n, start_time, end_time, min_time, max_time);
+      
+   printf("Bitte geben Sie den Pfad für die Graphviz-Outputdatei ein:\n");
+   char Graphviz_Outputfile[50];
+   scanf("%s", Graphviz_Outputfile);
+          
+   create_graph(Quelldatei, Outputfile, Graphviz_Outputfile, -1, 0);
+          
+          
+   }
+          
+    
+          
+          
+   

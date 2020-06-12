@@ -1,6 +1,8 @@
 set(graphviz_source_files
   create_list_interactions.c
   create_list_interactions.h
+  create_list_infected.c
+  create_list_infected.h
   generate_list_persons.c
   generate_list_persons.h
   generate_txt_file.c

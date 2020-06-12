@@ -12,16 +12,6 @@
 
 #define NAME_LEN 61
 
-int main(int argc, const char * argv[]) {
-    
-    //test call for person generator
-    printf("person generator return code: %d\n", generate_persons("names.csv", "persons.csv", 100, 0.2));
-    //test call for interaction generator
-    printf("interaction generator return code: %d\n", generate_interactions("persons.csv", "interactions.csv", 50, 0, 1440, 5, 30));
-    
-    return 0;
-}
-
 int generate_persons(char * input_path, char * output_path, int n, float infection_rate){
     int name_count = 0;
     

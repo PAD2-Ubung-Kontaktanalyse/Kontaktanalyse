@@ -16,7 +16,7 @@
  *  @param time_matrix[kont][kont] stores the time between two persons
  *  @return returns 0 in case of success, -1 for input error
  */
-int dij_array(int id_1,char * input_path_interactions, int kont, int time_matrix[kont][kont]);
+int dij_array(int id_1,char * input_path_interactions, int kont);
 
 /**
  *  @brief function searches every connection between the selected person (id_1) and persons potentially at risk and prints the connection with the highest time spent together

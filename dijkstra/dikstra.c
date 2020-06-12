@@ -118,6 +118,7 @@ void dijsktra(int id_1,int count, int time_matrix[count*2][count*2])
         visited[i]=0;
     }
 
+  printf("[%d] ->", id_1);
 
     for(j=1; j<=total; j++)
     {
@@ -132,8 +133,9 @@ void dijsktra(int id_1,int count, int time_matrix[count*2][count*2])
 
             }
         }
-        printf("Person %d steckt Person %d an: %d -> %d\n",id_1, id_3, id_1, id_3);
-        printf("Sie hatten %d Minuten miteinander Kontakt.\n\n", time[id_3]);
+
+    printf(" [%d] ->", id_3);
+        //printf("Sie hatten %d Minuten miteinander Kontakt.\n\n", time[id_3]);
         visited[id_1]=1;
         visited[id_3]=1;
         id_1 = id_3;
@@ -144,6 +146,5 @@ void dijsktra(int id_1,int count, int time_matrix[count*2][count*2])
         }
 
     }
-    printf("Letzte infizierte Peron ID %d\n", id_3);
-
+    printf("\n\nLetzte infizierte Peron ID %d\n", id_3);
 }

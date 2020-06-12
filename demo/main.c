@@ -249,6 +249,9 @@ int main(){
    printf("Bitte geben Sie den Pfad für die Outputdatei ein:\n");
    char Outputfile[50];
    scanf("%s", Outputfile);
+   printf("Bitte geben Sie den Pfad für die Interaktionen ein:\n");
+   char Interaktionen[50];
+   scanf("%s", Interaktionen);
    printf("Bitte geben Sie die Anzahl der Personen ein:\n");
    int n;
    scanf("%d", &n);
@@ -263,7 +266,7 @@ int main(){
    int min_time = 5;
    int max_time = 30;
           
-   generate_interactions(Outputfile, Quelldatei, n, start_time, end_time, min_time, max_time);
+   generate_interactions(Outputfile, Interaktionen, n, start_time, end_time, min_time, max_time);
       
    printf("Bitte geben Sie den Pfad für die Graphviz-Outputdatei ein:\n");
    char Graphviz_Outputfile[50];
